@@ -45,6 +45,7 @@ OLLAMA_EMBEDDING_MODEL  = os.getenv("OLLAMA_EMBEDDING_MODEL", "nomic-embed-text"
 # ── OpenRouter ────────────────────────────────────────────────────────────
 OPENROUTER_API_KEY  = os.getenv("OPENROUTER_API_KEY", "")
 OPENROUTER_MODEL    = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini")
+OPENROUTER_EMBEDDING_MODEL = os.getenv("OPENROUTER_EMBEDDING_MODEL", "openai/text-embedding-3-small")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # ── LangSmith ─────────────────────────────────────────────────────────────

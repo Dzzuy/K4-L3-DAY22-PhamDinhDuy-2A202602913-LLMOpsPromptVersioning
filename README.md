@@ -10,6 +10,8 @@
 
 # Chào mừng các bạn đến với Day 22: LangSmith + Prompt Versioning
 
+[Báo cáo kết quả, reflection và AI usage](REPORT.md).
+
 ## Tổng quan
 
 Trong lab này, bạn sẽ xây dựng một hệ thống hỏi đáp hoàn chỉnh tích hợp nhiều công nghệ AI hiện đại:
@@ -153,7 +155,7 @@ Guard().use(PIIDetector(), on_fail=OnFailAction.FIX)
 **Lưu ý phiên bản thư viện:**
 - `langchain-community` phải `< 0.4` (chạy `pip install "langchain-community<0.4"` sau khi cài `requirements.txt`): bản 0.4 làm `import ragas` lỗi `No module named 'langchain_community.chat_models.vertexai'`.
 - RAGAS 0.4: `result[metric_name]` trả về **list** điểm theo từng sample → dùng `numpy.mean()`; truyền `llm=` và `embeddings=` vào `evaluate()`. Cảnh báo deprecated khi import `ragas.metrics` có thể bỏ qua.
-- Guardrails 0.11: với `OnFailAction.FIX`, chỉ `FailResult(fix_value=...)` mới thay được output; `PassResult(value_override=...)` **không** có tác dụng.
+- Guardrails 0.6.6: với `OnFailAction.FIX`, dùng `FailResult(fix_value=...)` để thay output; `PassResult(value_override=...)` không che PII trong lab này. Bộ phiên bản ở `requirements.txt` giữ RAGAS và Guardrails tương thích với LangChain 0.3.
 
 **Bảo mật — không bao giờ commit `.env`:**
 Tệp `.env` chứa API key nhạy cảm. Đảm bảo `.gitignore` đã có dòng `.env` trước khi push lên GitHub. Chỉ commit tệp `.env.example` (không chứa giá trị thật). Vi phạm quy tắc này sẽ bị trừ 10 điểm tự động.

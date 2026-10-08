@@ -51,7 +51,7 @@ Chỉ cần điền key cho provider đã chọn:
 | `gemini` | Miễn phí, quota 15 request/phút → Checkpoint 3 sẽ chậm hơn |
 | `anthropic` | Không có Embeddings API → **vẫn cần `OPENAI_API_KEY`** cho embeddings |
 | `ollama` | Chạy offline, cần cài [ollama.ai](https://ollama.ai) và `ollama pull llama3.1 && ollama pull nomic-embed-text` |
-| `openrouter` | Nhiều model qua 1 key; embeddings vẫn dùng `OPENAI_API_KEY` |
+| `openrouter` | Chat và embeddings dùng cùng `OPENROUTER_API_KEY`; mặc định embeddings là `openai/text-embedding-3-small` qua OpenRouter |
 
 **4. Windows: bật UTF-8 cho Python**
 
