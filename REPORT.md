@@ -17,7 +17,7 @@ Luồng chính: **câu hỏi → retriever → ba đoạn context → prompt →
 |---|---|
 | 1. RAG + tracing | Chia tài liệu thành 107 chunks (`chunk_size=500`, `chunk_overlap=50`), tạo FAISS và truy xuất `k=3`. Chạy 50 câu hỏi; trace giúp xem lỗi đến từ truy xuất hay sinh câu trả lời. | [Ảnh LangSmith](evidence/01_langsmith_traces.png), `src/01_langsmith_rag_pipeline.py` |
 | 2. Prompt Hub + A/B | Đẩy và kéo hai prompt có hành vi khác nhau. Hash MD5 định tuyến 50 request ổn định: V1=19, V2=31. | [Ảnh Prompt Hub](evidence/02_prompt_hub.png), [log A/B](evidence/02_ab_routing_log.txt) |
-| 3. RAGAS | Chạy cùng 50 cặp QA qua **mỗi** prompt, giữ context dưới dạng `list[str]`, chấm bốn chỉ số. | [JSON report](evidence/03_ragas_report.json), [log chạy](evidence/03_ragas_run_log.txt); ảnh `03_ragas_scores.png` cần chụp lại theo lượt đo mới. |
+| 3. RAGAS | Chạy cùng 50 cặp QA qua **mỗi** prompt, giữ context dưới dạng `list[str]`, chấm bốn chỉ số. | [Ảnh điểm mới](evidence/03_ragas_scores.png), [JSON report](evidence/03_ragas_report.json), [log chạy](evidence/03_ragas_run_log.txt). |
 | 4. Guardrails | Tự viết hai validator. `FailResult(fix_value=...)` làm Guardrails thay output; PII sạch giữ nguyên, PII bị che; JSON lỗi được sửa hoặc trả JSON dự phòng. | [PII log](evidence/04_pii_demo_log.txt), [JSON log](evidence/04_json_demo_log.txt), `tests/test_guardrails_validators.py` |
 
 LangSmith API đã xác nhận 50 root traces `rag-query` và 50 root traces `ab-rag-query`. Trace mẫu có retriever, prompt, LLM và parser. Chat và embeddings chạy qua OpenRouter; cấu hình này dùng cùng `OPENROUTER_API_KEY`, không dùng OpenAI key riêng.
@@ -55,4 +55,4 @@ Tôi có sử dụng Codex để hỗ trợ viết code, tìm lỗi và kiểm t
 
 ## 7. Trước khi nộp
 
-Xem [SUBMISSION.md](SUBMISSION.md) để đối chiếu 7 file evidence, kiểm tra `.env` không bị Git theo dõi, rà bí mật trong code/log/ảnh, và nộp **cả URL GitHub repo lẫn URL LangSmith project** trên LMS. Chụp lại `evidence/03_ragas_scores.png` để thể hiện V1=0.9643 và V2=0.9423; ảnh hiện có là kết quả cũ. Ảnh LangSmith cần che email cá nhân trước khi đưa vào repo public. Kiểm tra quyền truy cập LangSmith bằng cửa sổ ẩn danh nếu muốn nhận điểm thưởng link công khai.
+Xem [SUBMISSION.md](SUBMISSION.md) để đối chiếu 7 file evidence, kiểm tra `.env` không bị Git theo dõi, rà bí mật trong code/log/ảnh, và nộp **cả URL GitHub repo lẫn URL LangSmith project** trên LMS. Ảnh RAGAS hiện có thể hiện V1=0.9643 và V2=0.9423; ảnh Prompt Hub đã được thay bằng bản che email. Kiểm tra quyền truy cập LangSmith bằng cửa sổ ẩn danh nếu muốn nhận điểm thưởng link công khai.
