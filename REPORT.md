@@ -3,7 +3,10 @@
 **Học viên:** Phạm Đình Duy<br>
 **MSSV:** 2A202602913<br>
 **Repo:** [K4-L3-DAY22-PhamDinhDuy-2A202602913-LLMOpsPromptVersioning](https://github.com/Dzzuy/K4-L3-DAY22-PhamDinhDuy-2A202602913-LLMOpsPromptVersioning)<br>
-**LangSmith project:** URL lưu trong [`evidence/LangSmithURL.txt`](evidence/LangSmithURL.txt). [Trace mẫu công khai](https://smith.langchain.com/public/fdfebbfb-92f1-490c-be7c-d2b573679503/r/01a119e9-6399-7440-bc7d-90760141fa9b?start_time=2026-10-08T05%3A08%3A08.217785Z). [Project](https://smith.langchain.com/o/bcadaffe-703a-43db-b490-1ab2ed4bb607/projects/p/5a1fdc71-6aa5-4fbb-aae5-feb11d06154b) (quyền truy cập công khai chưa được xác nhận).
+**LangSmith project:** URL lưu trong [`evidence/LangSmithURL.txt`](evidence/LangSmithURL.txt).
+
+- [Trace mẫu công khai](https://smith.langchain.com/public/fdfebbfb-92f1-490c-be7c-d2b573679503/r/01a119e9-6399-7440-bc7d-90760141fa9b?start_time=2026-10-08T05%3A08%3A08.217785Z).
+- [Project](https://smith.langchain.com/o/bcadaffe-703a-43db-b490-1ab2ed4bb607/projects/p/5a1fdc71-6aa5-4fbb-aae5-feb11d06154b) link.
 
 ## 1. Mục tiêu và luồng hệ thống
 
